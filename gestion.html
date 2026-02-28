@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gestion du Stock</title>
+<style>
+body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f2f2f2;}
+header { background:#4CAF50; color:white; padding:20px; text-align:center;}
+nav a { margin:0 15px; color:white; text-decoration:none; font-weight:bold;}
+section { padding:20px; }
+input { padding:5px; width:60px; margin-right:10px; }
+button { padding:5px 10px; background:#2196F3; color:white; border:none; cursor:pointer; }
+button:hover { background:#0b7dda; }
+</style>
+</head>
+<body>
+<header>
+<h1>Gestion du Stock</h1>
+<nav>
+<a href="index.html">Accueil</a>
+<a href="liste.html">Liste des boissons</a>
+<a href="ajouter.html">Ajouter boisson</a>
+<a href="gestion.html">Gestion stock</a>
+<a href="rapports.html">Rapports</a>
+</nav>
+</header>
+<section>
+<p>Dans cette version, vous pouvez mettre à jour la quantité directement dans la liste (simulation).</p>
+<p>Exemple : Entrer la nouvelle quantité pour Coca-Cola :</p>
+<input type="number" id="coca" value="50">
+<button onclick="updateCoca()">Mettre à jour</button>
+<p id="message"></p>
+</section>
+<footer>
+<p>&copy; 2026 Dépôt de Boissons</p>
+</footer>
+<script>
+function updateCoca(){
+  const val = document.getElementById('coca').value;
+  document.getElementById('message').innerText = 'Quantité mise à jour à ' + val;
+}
+</script>
+</body>
+</html>

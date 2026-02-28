@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ajouter Boisson</title>
+<style>
+body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f2f2f2;}
+header { background:#4CAF50; color:white; padding:20px; text-align:center;}
+nav a { margin:0 15px; color:white; text-decoration:none; font-weight:bold;}
+form { max-width:400px; margin:20px auto; background:white; padding:20px; border-radius:5px; }
+input { width:100%; padding:10px; margin:10px 0; }
+button { width:100%; padding:10px; background:#4CAF50; color:white; border:none; cursor:pointer; }
+button:hover { background:#45a049; }
+</style>
+</head>
+<body>
+<header>
+<h1>Ajouter une Boisson</h1>
+<nav>
+<a href="index.html">Accueil</a>
+<a href="liste.html">Liste des boissons</a>
+<a href="ajouter.html">Ajouter boisson</a>
+<a href="gestion.html">Gestion stock</a>
+<a href="rapports.html">Rapports</a>
+</nav>
+</header>
+<section>
+<form id="ajoutForm">
+<input type="text" placeholder="Nom de la boisson" id="nom" required>
+<input type="number" placeholder="Quantité" id="quantite" required>
+<input type="number" step="0.01" placeholder="Prix unitaire" id="prix" required>
+<button type="submit">Ajouter</button>
+</form>
+</section>
+<footer>
+<p>&copy; 2026 Dépôt de Boissons</p>
+</footer>
+<script>
+document.getElementById('ajoutForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const nom = document.getElementById('nom').value;
+  const quantite = document.getElementById('quantite').value;
+  const prix = document.getElementById('prix').value;
+
+  let table = window.open('liste.html', '_blank');
+  alert('Boisson ajoutée : ' + nom + ' (' + quantite + ') à $' + prix);
+  this.reset();
+});
+</script>
+</body>
+</html>
